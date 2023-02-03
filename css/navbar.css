@@ -84,13 +84,15 @@ img, video {
 
 .header .navbar {
     max-width: 100%;
-    height: auto
+    height: auto;
+    display: flex;
 }
 
 .header .menu>.menu-item {
     position: relative;
     display: inline-block;
-    margin: 0 .75rem
+    margin: 0 .75rem;
+    *background-color: red;
 }
 
 .header .menu>.menu-item>a {
@@ -103,7 +105,7 @@ img, video {
     border: none;
     outline: none;
     color: #121212;
-    text-transform: capitalize;
+    text-transform: uppercase;
     text-rendering: optimizeLegibility;
     -webkit-transition: all .35s ease;
     -o-transition: all .35s ease;
@@ -136,7 +138,7 @@ img, video {
     transform: translate(-50%, -50%);
     -webkit-transition: all .35s ease;
     -o-transition: all .35s ease;
-    transition: all .35s ease
+    transition: all .35s ease;
 }
 
 .header .menu>.menu-item:hover>a {
@@ -177,7 +179,7 @@ img, video {
     transform: translateY(1rem);
     -webkit-transition: all .35s ease;
     -o-transition: all .35s ease;
-    transition: all .35s ease
+    transition: all .35s ease;
 }
 
 .header .menu>.menu-item>.sub-menu>.menu-item {
@@ -196,15 +198,19 @@ img, video {
     text-rendering: optimizeLegibility;
     -webkit-transition: all .35s ease;
     -o-transition: all .35s ease;
-    transition: all .35s ease
+    transition: all .35s ease;
 }
+
+/* .container-buttons {
+
+} */
 
 .header .opened-menu {
     position: relative;
     display: none;
     cursor: pointer;
-    width: 2rem;
-    height: 1rem;
+    *width: 2rem;
+    *height: 1rem;
     border: none;
     outline: none;
     opacity: 0;
@@ -215,10 +221,34 @@ img, video {
     transform: rotate(0deg);
     -webkit-transition: all .35s ease;
     -o-transition: all .35s ease;
-    transition: all .35s ease
+    transition: all .35s ease;
 }
 
-.header .opened-menu span {
+.size-icon {
+    font-size: 35px;
+}
+
+.container-nav-footer {
+    *background-color: brown;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: none;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #dfdcdc;
+    color: #121212;
+    
+    height: 6%;
+}
+
+.syb {
+    *background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .header .opened-menu span {
     display: block;
     position: absolute;
     width: 100%;
@@ -235,9 +265,9 @@ img, video {
     -webkit-transition: all .25s ease;
     -o-transition: all .25s ease;
     transition: all .25s ease
-}
+} */
 
-.header .opened-menu span:nth-child(1) {
+/* .header .opened-menu span:nth-child(1) {
     top: 0
 }
 
@@ -247,7 +277,7 @@ img, video {
 
 .header .opened-menu span:nth-child(4) {
     top: 1rem
-}
+} */
 
 .header .closed-menu {
     display: none;
@@ -262,14 +292,16 @@ img, video {
     height: 2.5rem;
     border: none;
     outline: none;
-    background: 0 0
+    background: 0 0;
+    *background-color: red;
+    margin-top: -5px;
 }
 
-.header .closed-menu img.closed-icon {
+/* .header .closed-menu img.closed-icon {
     display: block;
     width: 1rem;
     height: auto
-}
+} */
 
 .header .overlay {
     position: fixed;
@@ -283,7 +315,7 @@ img, video {
     background: rgba(0, 0, 0, .6);
     -webkit-transition: all .35s ease;
     -o-transition: all .35s ease;
-    transition: all .35s ease
+    transition: all .35s ease;
 }
 
 @media only screen and (min-width:993px) {
@@ -293,24 +325,29 @@ img, video {
         visibility: visible;
         -webkit-transform: translateY(0);
         -ms-transform: translateY(0);
-        transform: translateY(0)
+        transform: translateY(0);
     }
 
     .header .menu>.menu-item-has-children:hover>a .expand::after {
         -webkit-transform: translate(-50%, -50%) rotate(0deg);
         -ms-transform: translate(-50%, -50%) rotate(0deg);
-        transform: translate(-50%, -50%) rotate(0deg)
+        transform: translate(-50%, -50%) rotate(0deg);
     }
 }
 
 @media only screen and (max-width:992px) {
+    .container-nav-footer {
+        display: block;
+    }
+
     .header .overlay.active {
         display: block;
         opacity: 1;
-        visibility: visible
+        visibility: visible;
     }
 
     .header .navbar {
+        display: block;
         position: fixed;
         top: 0;
         left: -18rem;
@@ -326,35 +363,35 @@ img, video {
         box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
         -webkit-transition: all .5s ease;
         -o-transition: all .5s ease;
-        transition: all .5s ease
+        transition: all .5s ease;
     }
 
     .header .navbar.active {
         left: 0;
         opacity: 1;
-        visibility: visible
+        visibility: visible;
     }
 
     .header .navbar::-webkit-scrollbar {
-        width: 5px
+        width: 5px;
     }
 
     .header .navbar::-webkit-scrollbar-thumb {
         border-radius: 1rem;
         background: #e6e6e6;
         -webkit-box-shadow: inset 0 2px 6px rgba(0, 0, 0, .12);
-        box-shadow: inset 0 2px 6px rgba(0, 0, 0, .12)
+        box-shadow: inset 0 2px 6px rgba(0, 0, 0, .12);
     }
 
     .header .menu {
         width: 100%;
         height: auto;
-        margin-top: 3.5rem
+        margin-top: 3.5rem;
     }
 
     .header .menu>.menu-item {
         display: block;
-        margin: 0
+        margin: 0;
     }
 
     .header .menu>.menu-item-has-children>a {
@@ -366,17 +403,18 @@ img, video {
         justify-content: space-between;
         -webkit-box-align: center;
         -ms-flex-align: center;
-        align-items: center
+        align-items: center;
     }
 
     .header .menu>.menu-item>a {
         padding: .75rem 1rem;
         color: #121212;
-        border-bottom: 1px solid #f2f2f2
+        border-bottom: 1px solid #dfdcdc;
+        
     }
 
     .header .menu>.menu-item:first-child>a {
-        border-top: 1px solid #f2f2f2
+        border-top: 1px solid #dfdcdc;
     }
 
     .header .menu>.menu-item>a .expand::before, .header .menu>.menu-item>a .expand::after {
@@ -412,7 +450,9 @@ img, video {
     .header .menu>.menu-item>.sub-menu>.menu-item>a {
         padding: .75rem 2rem;
         color: #121212;
-        border-bottom: 1px solid #f2f2f2
+        border-bottom: 1px solid #e0e0e0;
+        background-color: #f8f8f8;
+        font-size: 14px;
     }
 
     .header .opened-menu {

@@ -1,8 +1,41 @@
+:root {
+    --theme-color: white;
+    --primary-color: #124f88;
+    --secondary-color: #f7c331;
+    --text-color-inverse: white;
+    --text-color: black;
+    --navbar-shallow-color: #e5e5e5;
+    --menu-mobile-background-color: #3a4460;
+
+    --accent-color: var(--primary-color);
+    --primary-color-inverse: black;
+
+    --transition: .3s ease;
+    color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+    --theme-color: #0f172a;
+    --primary-color: #243043;
+    --secondary-color: #9dc8db;
+    --text-color: rgba(255, 255, 255, 0.87);
+    --text-color-inverse: var(--text-color);
+    --navbar-shallow-color: #e5e5e5;
+    --menu-mobile-background-color: #18213e;
+
+    --accent-color: var(--secondary-color);
+
+    color-scheme: dark;
+}
+
+
 html {
     font-size: 100%;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    /* background-color: var(--theme-color);
+    transition: var(--transition); */
 }
 
 *, *::before, *::after {
@@ -19,7 +52,8 @@ html {
 }
 
 body {
-    font-family: inter, Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    *font-family: inter, Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
