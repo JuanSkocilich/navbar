@@ -228,26 +228,6 @@ img, video {
     font-size: 35px;
 }
 
-.container-nav-footer {
-    *background-color: brown;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    display: none;
-    padding: 0.75rem 1rem;
-    border-top: 1px solid #dfdcdc;
-    color: #121212;
-    
-    height: 6%;
-}
-
-.syb {
-    *background-color: #f2f2f2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 /* .header .opened-menu span {
     display: block;
     position: absolute;
