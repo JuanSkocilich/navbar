@@ -1,9 +1,14 @@
 :root {
-    --theme-color: white;
+    --theme-color: #f8fafc;
+    --second-theme-color: #f1f5f9;
+    --third-theme-color: #e2e8f0;
+    --navbar-hover: #cbd5e1;
+    --footer-background-color: #cbd5e1;
+
     --primary-color: #124f88;
     --secondary-color: #f7c331;
     --text-color-inverse: white;
-    --text-color: black;
+    --text-color: #0f172a;
     --navbar-shallow-color: #e5e5e5;
     --menu-mobile-background-color: #3a4460;
 
@@ -15,10 +20,16 @@
 }
 
 :root[data-theme="dark"] {
-    --theme-color: #0f172a;
+    --theme-color: #1e293b;
+    --second-theme-color: #0f172a;
+    --third-theme-color: var(--theme-color);
+    --navbar-hover: #334155;
+    --footer-background-color: var(--second-theme-color);
+
+
     --primary-color: #243043;
     --secondary-color: #9dc8db;
-    --text-color: rgba(255, 255, 255, 0.87);
+    --text-color: #f1f5f9;
     --text-color-inverse: var(--text-color);
     --navbar-shallow-color: #e5e5e5;
     --menu-mobile-background-color: #18213e;
@@ -36,6 +47,8 @@ html {
     scroll-behavior: smooth;
     /* background-color: var(--theme-color);
     transition: var(--transition); */
+    position: relative;
+    min-height: 100%;
 }
 
 *, *::before, *::after {
@@ -48,7 +61,8 @@ html {
     text-decoration: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility
+    text-rendering: optimizeLegibility;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 body {
@@ -57,8 +71,9 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #121212;
-    background: #fafafa
+    *color: var(--text-color);
+    background: var(--theme-color);
+    transition: var(--transition);
 }
 
 body.scrolling {
